@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MyCodeCamp.Data.Entities;
+using SecureTheDoge.Data.Entities;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
   public class PrisonContext : IdentityDbContext
   {
-    private IConfigurationRoot _config;
+    private IConfiguration _config;
 
-    public PrisonContext(DbContextOptions options, IConfigurationRoot config)
+    public PrisonContext(DbContextOptions options, IConfiguration config)
       : base(options)
     {
       _config = config;

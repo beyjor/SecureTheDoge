@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using MyCodeCamp.Data.Entities;
+using SecureTheDoge.Data.Entities;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
-  public class CampDbInitializer
+  public class PrisonDbInitializer
   {
     private PrisonContext _ctx;
 
-    public CampDbInitializer(PrisonContext ctx)
+    public PrisonDbInitializer(PrisonContext ctx)
     {
       _ctx = ctx;
     }
@@ -31,7 +31,7 @@ namespace MyCodeCamp.Data
     {
       new Prison()
       {
-        Name = "Your First Code Camp",
+        Name = "Your First Code Prison",
         Moniker = "ATL2016",
         EventDate = DateTime.Today.AddDays(45),
         Length = 1,
@@ -44,7 +44,7 @@ namespace MyCodeCamp.Data
           PostalCode = "30303",
           Country = "USA"
         },
-        Speakers = new List<Prisoner>
+        Prisoners = new List<Prisoner>
         {
           new Prisoner()
           {
@@ -56,7 +56,7 @@ namespace MyCodeCamp.Data
             PhoneNumber = "555-1212",
             HeadShotUrl = "http://wilderminds.com/images/minds/shawnwildermuth.jpg",
             WebsiteUrl = "http://wildermuth.com",
-            Talks = new List<Crime>()
+            Crimes = new List<Crime>()
             {
               new Crime()
               {
@@ -64,7 +64,7 @@ namespace MyCodeCamp.Data
                 Abstract = "How to do ASP.NET Core",
                 Category = "Web Development",
                 Level = "100",
-                Prerequisites = "C# Experience",
+                PriorOffences = "C# Experience",
                 Room = "245",
                 StartingTime = DateTime.Parse("14:30")
               },
@@ -74,7 +74,7 @@ namespace MyCodeCamp.Data
                 Abstract = "How to do Bootstrap 4",
                 Category = "Web Development",
                 Level = "100",
-                Prerequisites = "CSS Experience",
+                PriorOffences = "CSS Experience",
                 Room = "246",
                 StartingTime = DateTime.Parse("13:00")
               },
@@ -90,7 +90,7 @@ namespace MyCodeCamp.Data
             PhoneNumber = "555-1212",
             HeadShotUrl = "http://wilderminds.com/images/minds/resawildermuth.jpg",
             WebsiteUrl = "http://wildermuth.com",
-            Talks = new List<Crime>()
+            Crimes = new List<Crime>()
             {
               new Crime()
               {

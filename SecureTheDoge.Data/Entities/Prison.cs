@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyCodeCamp.Data.Entities
+namespace SecureTheDoge.Data.Entities
 {
   public class Prison
   {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyCodeCamp.Data.Entities
+namespace SecureTheDoge.Data.Entities
 {
   public class Crime
   {

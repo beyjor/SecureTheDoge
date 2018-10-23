@@ -5,9 +5,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using MyCodeCamp.Data.Entities;
+using SecureTheDoge.Data.Entities;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
   public class PrisonIdentityInitializer
   {
@@ -30,7 +30,6 @@ namespace MyCodeCamp.Data
         if (!(await _roleMgr.RoleExistsAsync("Admin")))
         {
           var role = new IdentityRole("Admin");
-          role.Claims.Add(new IdentityRoleClaim<string>() { ClaimType = "IsAdmin", ClaimValue = "True" });
           await _roleMgr.CreateAsync(role);
         }
 

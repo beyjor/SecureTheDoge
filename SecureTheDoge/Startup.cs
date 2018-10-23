@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SecureTheDoge.Data;
 
 namespace SecureTheDoge
 {
@@ -25,6 +26,10 @@ namespace SecureTheDoge
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
+            services.AddDbContext<PrisonContext>(ServiceLifetime.Scoped);
+            services.AddScoped<IPrisonRepository, PrisonRepository>();
+
+            services.AddTransient<PrisonDbInitializer>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

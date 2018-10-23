@@ -1,16 +1,24 @@
-﻿using System;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
-  public static class Program
-  {
-    // Only for the EF Tools until they mature to support Library Projects
-    public static void Main()
+    public class Program
     {
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
     }
-  }
 }

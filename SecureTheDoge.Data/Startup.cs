@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MyCodeCamp.Data.Entities;
+using SecureTheDoge.Data.Entities;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
   public class Startup
   {

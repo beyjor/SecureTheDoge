@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MyCodeCamp.Data.Entities;
+using SecureTheDoge.Data.Entities;
 
-namespace MyCodeCamp.Data
+namespace SecureTheDoge.Data
 {
   public interface IPrisonRepository
   {
@@ -11,26 +11,26 @@ namespace MyCodeCamp.Data
     void Delete<T>(T entity) where T : class;
     Task<bool> SaveAllAsync();
 
-    // Camps
-    IEnumerable<Prison> GetAllCamps();
-    Prison GetCamp(int id);
-    Prison GetCampWithSpeakers(int id);
-    Prison GetCampByMoniker(string moniker);
-    Prison GetCampByMonikerWithSpeakers(string moniker);
+    // Prisons
+    IEnumerable<Prison> GetAllPrisons();
+    Prison GetPrison(int id);
+    Prison GetPrisonWithPrisoners(int id);
+    Prison GetPrisonByMoniker(string moniker);
+    Prison GetPrisonByMonikerWithPrisoners(string moniker);
 
-    // Speakers
-    IEnumerable<Prisoner> GetSpeakers(int id);
-    IEnumerable<Prisoner> GetSpeakersWithTalks(int id);
-    IEnumerable<Prisoner> GetSpeakersByMoniker(string moniker);
-    IEnumerable<Prisoner> GetSpeakersByMonikerWithTalks(string moniker);
-    Prisoner GetSpeaker(int speakerId);
-    Prisoner GetSpeakerWithTalks(int speakerId);
+    // Prisoners
+    IEnumerable<Prisoner> GetPrisoners(int id);
+    IEnumerable<Prisoner> GetPrisonersWithCrimes(int id);
+    IEnumerable<Prisoner> GetPrisonersByMoniker(string moniker);
+    IEnumerable<Prisoner> GetPrisonersByMonikerWithCrimes(string moniker);
+    Prisoner GetPrisoner(int prisonerId);
+    Prisoner GetPrisonerWithCrimes(int prisonerId);
 
-    // Talks
-    IEnumerable<Crime> GetTalks(int speakerId);
-    Crime GetTalk(int talkId);
+    // Crimes
+    IEnumerable<Crime> GetCrimes(int prisonerId);
+    Crime GetCrime(int crimeId);
 
-    // CampUser
+    // PrisonUser
     PrisonUser GetUser(string userName);
   }
 }

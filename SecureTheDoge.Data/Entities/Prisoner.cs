@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MyCodeCamp.Data.Entities
+namespace SecureTheDoge.Data.Entities
 {
   public class Prisoner
   {
@@ -15,7 +15,7 @@ namespace MyCodeCamp.Data.Entities
     public string HeadShotUrl { get; set; }
     public PrisonUser User { get; set; }
 
-    public ICollection<Crime> Talks { get; set; }
+    public ICollection<Crime> Crimes { get; set; }
     public Prison Prison { get; set; }
 
     public byte[] RowVersion { get; set; }
